@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col">
+        <input type="checkbox" id="ShowBanner" [(ngModel)]="ShowBanner"> 
+        <label for="ShowBanner">Mostrar/Ocultar-Banner</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        @if(ShowBanner){
+        <img class="w-100" [src]="images[2]" />
+        }
+    </div>
+</div>

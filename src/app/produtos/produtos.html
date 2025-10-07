@@ -1,0 +1,30 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">descricao</th>
+            <th scope="col">Em estoque</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(p of Produto; track $index){
+        <tr>
+            <th scope="row">{{p.id}}</th>
+            <td>{{p.nome}}</td>
+            <td>{{p.preco}}</td>
+            <td>{{p.descricao}}</td>
+            <td>{{p.emEstoque}}</td>
+            <td>
+                <button [ngStyle]="{'background-color': p.emEstoque == 0? 'gray':'light-blue'}" type="button" class="btn btn-info" routerLink="/ProdutosDetalhes/{{p.id}}" routerLinkActive="router-link-active" >Comprar</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+@if(!Produto || Produto.length === 0){
+<h1>NENHUM PRODUTO DISPONÍVEL!</h1>}
